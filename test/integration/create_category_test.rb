@@ -14,7 +14,7 @@ class CreateCategoryTest < ActionDispatch::IntegrationTest
     assert_match "Sports", response.body
   end
   
-  test "get new category form and create invlalid category" do
+  test "get new category form and create invalid category" do
     get "/categories/new"
     assert_select "h1", "New Category"
   
