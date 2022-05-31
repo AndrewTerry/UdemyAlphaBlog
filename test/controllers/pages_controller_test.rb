@@ -24,8 +24,7 @@ class PagesControllerTest < ActionDispatch::IntegrationTest
     assert_select "a[href=?]", new_category_path, text: "Create New"
   end
   
-  test "should not show Create Category dropdown to non-users" do
-    #sign_in_as(@admin_user)
+  test "should not show Create Category dropdown to non-admin users" do
     get articles_path
     assert_select "a[href=?]", new_category_path, false
   end
