@@ -1,5 +1,11 @@
 <h1 class="text-center mt-4"><%= @category.name %> Category</h1>
 
+<div class="text-center">
+  <% if logged_in? && current_user.admin? %>
+    <%= link_to "Edit category name", edit_category_path(@category), class: "btn btn-info mb-4" %>
+  <% end %>
+</div>
+
 <div class="flickr_pagination">
   <%= will_paginate @articles, :container => false %>
 </div>
